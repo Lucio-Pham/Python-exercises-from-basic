@@ -32,3 +32,16 @@ for i in range (size):
     if csv_mapping_list [min_index]['name']>csv_mapping_list[j]['name']: 
       min_index=j
       csv_mapping_list[i], csv_mapping_list[min_index] = csv_mapping_list[ min_index], csv_mapping_list[i]
+      
+#gộp 2 dictionary 
+dict_1= {'name': 'Lucio', 'car': 'Lamborghini', 'pet': 'Mo'}
+dict_2= {'name': 'Anna', 'car': 'Ferrari', 'pet': 'Jini'}
+powers= dict()
+
+for dict in (dict_1, dict_2): 
+    for key, value in dict.items(): 
+        powers[key]= value
+        print("Gộp dictionary\n", powers)
+#cách khác để gộp dictionary---dictionary comprehension
+powers = {key:value for d in (dict_1, dict_2) for key, val in d.items()}
+print ("cách khác để gộp dictionary\n", powers) 
