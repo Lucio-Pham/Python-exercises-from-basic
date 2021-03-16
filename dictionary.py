@@ -19,3 +19,16 @@ print ("gộp 2 list thành 1 dict", combine_dict)
 #cách khác để gộp 2 list thành 1 dictionary
 combine_list = {key:value for key, value in zip(list_1, list_2)}
 print ("cách khác gộp 2 list thành 1 dict\n", combine_list)
+
+#sắp xếp 1 list các dictionary
+csv_mapping_list= [ {'name': 'Lucio', 'car': 'Lamborghini', 'pet': 'Mo'},
+                    {'name': 'Anna', 'car': 'Ferrari', 'pet': 'Jini'},
+                    {'name': 'Kevin', 'car': 'Nissan GTR', 'pet': 'Klivan'},
+                    {'name': 'Maximilian', 'car': 'Audi', 'pet':'Mitt'}] 
+size= len (csv_mapping_list)
+for i in range (size):
+  min_index =i 
+  for j in range (i+1, size): 
+    if csv_mapping_list [min_index]['name']>csv_mapping_list[j]['name']: 
+      min_index=j
+      csv_mapping_list[i], csv_mapping_list[min_index] = csv_mapping_list[ min_index], csv_mapping_list[i]
