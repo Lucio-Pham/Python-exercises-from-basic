@@ -49,3 +49,21 @@ print ("cách khác để gộp dictionary\n", powers)
 #copy an d update dictionary 
 powers_1 = dict_1.copy()
 print ("Đây là 1 dictionary được copy lại\n", powers_1)
+
+#Gộp 2 dictionary làm một
+#Unpacking dictionary 
+d= {**dict_1, **dict_2}
+print (d) 
+
+#Sắp xếp dictionary theo giá trị 
+delta = {"a": 5, "b": 9, "c": 1, "d": 12} 
+#Sắp xếp theo giá trị tăng dần (value tăng dần)
+print (sorted(delta.items(), key= lambda x:x[1]))
+#Sắp xếp theo giá trị tăng dần (key tăng dần)
+print((sorted(delta.items(), key= lambda x:x[0]))
+
+#Sắp xếp dictionary theo value
+from operator import itemgetter
+print (sorted(delta.items(), key=itemgetter(1)))
+#hoặc cách khác
+print (sorted(delta, key=delta.get(0)))
