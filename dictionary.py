@@ -66,4 +66,22 @@ print((sorted(delta.items(), key= lambda x:x[0]))
 from operator import itemgetter
 print (sorted(delta.items(), key=itemgetter(1)))
 #hoặc cách khác
-print (sorted(delta, key=delta.get(0)))
+print (sorted(delta, key=delta.get(0))) #hàm get() lấy ít nhất 1 giá trị (0 hoặc 1) 
+
+#Tính tổng các giá trị (value) là số có trong dictionary 
+dict_a= {'a': 1, 'b': 4, 'v': 5, 'f': 9}
+dict_b= {'g':5, 't': 6, 'k': 7, 'w': 8}
+print(sum(dict_a.values()))
+
+#ghép 2 list thành 1 dictionary
+list_1= ['name', 'car', 'pet', 'book']
+list_2= ['Lucio', 'Lamborghini', 'Mo', 'War&Peace']
+new_dict= dict(zip(list_1, list_2)) #list nào đặt trước thì là key, list đặt sau là value trong dict mới
+print(new_dict)
+
+#Tìm min max values trong dictionary 
+maximum_num= max(dict_a.keys(), key= (lambda k: dict_a[k]))
+print(maximum_num)
+
+minimum_num= min(dict_a.keys(), key= (lambda k: dict_a[k]))
+print (minimum_num)
